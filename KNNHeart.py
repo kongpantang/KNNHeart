@@ -62,11 +62,20 @@ html_8 = """
 st.markdown(html_8, unsafe_allow_html=True)
 st.markdown("")
 
-pt_len = st.slider("กรุณาเลือกข้อมูล petal.length")
-pt_wd = st.slider("กรุณาเลือกข้อมูล petal.width")
+A1 = st.number_input("กรุณาเลือกข้อมูล Age")
+A2 = st.number_input("กรุณาเลือกข้อมูล Sex")
+A3 = st.number_input("กรุณาเลือกข้อมูล ChestPainType")
+A4 = st.number_input("กรุณาเลือกข้อมูล RestingBP")
+A5 = st.number_input("กรุณาเลือกข้อมูล Cholesterol")
+A6 = st.number_input("กรุณาเลือกข้อมูล FastingBS")
+A7 = st.number_input("กรุณาเลือกข้อมูล RestingECG")
+A7 = st.number_input("กรุณาเลือกข้อมูล MaxHR")
+A9 = st.number_input("กรุณาเลือกข้อมูล ExerciseAngina")
+A10 = st.number_input("กรุณาเลือกข้อมูล Oldpeak")
+A11 = st.number_input("กรุณาเลือกข้อมูล ST_Slope")
 
-sp_len = st.number_input("กรุณาเลือกข้อมูล sepal.length")
-sp_wd = st.number_input("กรุณาเลือกข้อมูล sepal.width")
+
+
 
 if st.button("ทำนายผล"):
     #st.write("ทำนาย")
@@ -77,7 +86,7 @@ if st.button("ทำนายผล"):
    Knn_model = KNeighborsClassifier(n_neighbors=3)
    Knn_model.fit(X, y)  
     
-   x_input = np.array([[pt_len, pt_wd, sp_len, sp_wd]])
+   x_input = np.array([[A1,A2,A3,A4,A5,A6,A7,A8,A9,A10,A11]])
    st.write(Knn_model.predict(x_input))
    
    out=Knn_model.predict(x_input)
