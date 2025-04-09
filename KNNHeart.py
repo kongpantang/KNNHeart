@@ -7,6 +7,7 @@ import seaborn as sns
 
 
 st.header('การจำแนกข้อมูลด้วยเทคนิค ML(KNNHeart)')
+st.header('นายสุกฤษฎิ์ พันแตง 654245023 65/39')
 col1, col2 = st.columns(2)
 
 with col1:
