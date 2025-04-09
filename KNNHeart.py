@@ -45,13 +45,13 @@ feature = st.selectbox("เลือกฟีเจอร์", dt.columns[:-1])
 # วาดกราฟ boxplot
 st.write(f"### 🎯 Boxplot: {feature} แยกประเภทเป็นหรือไม่เป็นโรคหัวใจ")
 fig, ax = plt.subplots()
-sns.boxplot(data=dt, x='variety', y=feature, ax=ax)
+sns.boxplot(data=dt, x='HeartDisease', y=feature, ax=ax)
 st.pyplot(fig)
 
 # วาด pairplot
 if st.checkbox("แสดง Pairplot (ใช้เวลาประมวลผลเล็กน้อย)"):
     st.write("### 🌺 Pairplot: การกระจายของข้อมูลทั้งหมด")
-    fig2 = sns.pairplot(dt, hue='variety')
+    fig2 = sns.pairplot(dt, hue='HeartDisease')
     st.pyplot(fig2)
 
 html_8 = """
@@ -71,8 +71,8 @@ sp_wd = st.number_input("กรุณาเลือกข้อมูล sepal.
 if st.button("ทำนายผล"):
     #st.write("ทำนาย")
    dt = pd.read_csv("./data/Heart3.csv") 
-   X = dt.drop('variety', axis=1)
-   y = dt.variety   
+   X = dt.drop('HeartDisease', axis=1)
+   y = dt.HeartDisease   
 
    Knn_model = KNeighborsClassifier(n_neighbors=3)
    Knn_model.fit(X, y)  
