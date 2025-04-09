@@ -92,8 +92,8 @@ if st.button("ทำนายผล"):
    out=Knn_model.predict(x_input)
 
    if out[0] == 1:
-    st.image("./img/img1.jpg")
-   elif out[0] == 0:       
     st.image("./img/img2.jpg")
+   else:       
+    st.image("./img/img1.jpg")
 else:
     st.write("ไม่ทำนาย")
